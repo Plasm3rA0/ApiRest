@@ -5,10 +5,13 @@ namespace ApiRest.Models.Dto
     public class UserDto
     {
         public int Id { get; set; }
-        [Required]
-        [MaxLength(45)]
-        public string Name { get; set; }
-        public int Age { get; set; }
-        public int Money { get; set; }
+        [Required(ErrorMessage ="Please Enter your username")]
+        [DataType(DataType.Text)]
+        [MaxLength(15)]
+        public string name { get; set; }
+        public string surname { get; set; }
+        public int age { get; set; }
+        public string email { get; set; }
+        public string imageUrl { get; set; }
     }
 }
